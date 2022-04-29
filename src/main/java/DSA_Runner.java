@@ -16,7 +16,7 @@ public class DSA_Runner {
 //            }
 
         int[] arr = {1,2,3,4};
-            int[] sol = ReverseTheArray_1.optimization_1(arr);
+            int[] sol = ReverseTheArray_1.optimization_2(arr);
             for(int n : sol){
                 System.out.print(n+", ");
             }

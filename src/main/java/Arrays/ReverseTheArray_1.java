@@ -38,24 +38,31 @@ public class ReverseTheArray_1 {
 
     public static int[] optimization_1(int[] arr){
 
-        System.out.println("Optimization 1 : No additional Array and O(n/2) Complexity");
+        System.out.println("Optimization 1 : No additional Array and O(n/2) Complexity, However using one temp variable for swap");
 
         int arrlen = arr.length;
-        if(arr.length%2==0){
-            int mid = (arrlen/2);
-            for(int i=mid-1; i>=0;i--){
-                System.out.println("print->"+i+"\t"+(arrlen-1-i));
-                int temp = arr[i];
-                arr[i] = arr[arrlen-i-1];
-                arr[arrlen-i-1] = temp;
-            }
-        }else{
-            int mid = arrlen/2;
-            for(int i=mid; i>0;i--){
-                arr[i] =arr[arrlen-mid];
-            }
+        int mid = arrlen/2;
+        for(int i=mid-1; i>=0;i--){
+            int temp = arr[i];
+            arr[i] = arr[arrlen-i-1];
+            arr[arrlen-i-1] = temp;
         }
 
+
+        return arr;
+    }
+
+    public static int[] optimization_2(int[] arr){
+
+        System.out.println("Optimization 2 : No additional Array and O(n/2) Complexity, No additional space");
+
+        int arrlen = arr.length;
+        int mid = arrlen/2;
+        for(int i=mid-1; i>=0;i--){
+            arr[i]=arr[i]+arr[arrlen-i-1];
+            arr[arrlen-i-1]=arr[i]-arr[arrlen-i-1];
+            arr[i] = arr[i]-arr[arrlen-i-1];
+        }
 
         return arr;
     }
