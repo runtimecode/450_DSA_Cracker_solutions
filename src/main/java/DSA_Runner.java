@@ -1,24 +1,19 @@
+import Arrays.Find_kth_small_element;
 import Arrays.ReverseTheArray_1;
+import Arrays.getMinMax_2;
+import CLRS_DataStructure.MaximumSubarraySum;
 
 public class DSA_Runner {
 
     public static void main(String[] args) {
-//        Scanner sc=new Scanner(System.in);
-//        int T=sc.nextInt(); // number of testcases
-//
-//        for(int i=0; i<T;i++){
-//            int n = sc.nextInt();
-//
-//            int[] arr = new int[n];
-//
-//            for( int m=0;m<n;m++){
-//                arr[m] = sc.nextInt();
-//            }
 
-        int[] arr = {1,2,3,4};
-            int[] sol = ReverseTheArray_1.optimization_2(arr);
-            for(int n : sol){
-                System.out.print(n+", ");
-            }
+        int[] arr = {0,13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
+
+        int[] resultArr = MaximumSubarraySum.bruteForceSolution(arr);
+
+        for(int temp : resultArr){
+            System.out.print(temp+"\t");
+        }
+
     }
 }
