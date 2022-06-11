@@ -1,21 +1,17 @@
 package Coursera.Week2.Beans;
 
-public class LinkedList {
+public class Stack {
 
-//    add
-//    delete
-//    find
-//
-    private Node first = null;
+    Node first = null;
 
     public boolean isEmpty(){
-        return first ==null;
+        return first==null;
     }
 
-    public void push(String item){
+    public void push(String str){
         Node oldfist = first;
         first = new Node();
-        first.item = item;
+        first.item = str;
         first.next = oldfist;
     }
 
@@ -24,4 +20,9 @@ public class LinkedList {
         first = first.next;
         return item;
     }
+
+    public String peek(){
+        return first.item;
+    }
+
 }
