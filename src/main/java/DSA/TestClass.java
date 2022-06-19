@@ -1,9 +1,6 @@
 package DSA;
 
-import DSA.Array.KthElement;
-import DSA.Array.MaxAndMin;
-import DSA.Array.ReverseAnArray;
-import DSA.Array.SortAnArrayof012;
+import DSA.Array.*;
 
 import java.sql.Array;
 import java.util.Arrays;
@@ -23,7 +20,9 @@ public class TestClass {
 //
 //        KthElement ra = new KthElement(arr);
 //        System.out.println(ra.getKthElement(4));
-        SortAnArrayof012 sr = new SortAnArrayof012(arr);
-        System.out.println(sr.getNthItem(55));
+
+        int[] temp = {1,2,3,4,5};
+        CycalicallyRotateArray sr = new CycalicallyRotateArray(temp);
+        Arrays.stream(sr.rotateInCycallically(2)).forEach(System.out::print);
     }
 }
