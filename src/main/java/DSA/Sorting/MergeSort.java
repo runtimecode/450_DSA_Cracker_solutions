@@ -1,5 +1,7 @@
 package DSA.Sorting;
 
+import java.util.Arrays;
+
 public class MergeSort implements Sorting{
 
     int[] arr;
@@ -19,6 +21,7 @@ public class MergeSort implements Sorting{
            mergeSort(low,mid);
            mergeSort(mid+1,high);
            merge(low, mid,high);
+
         }
     }
 
