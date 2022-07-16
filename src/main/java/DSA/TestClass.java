@@ -1,6 +1,7 @@
 package DSA;
 
 import DSA.Array.*;
+import DSA.Sorting.MergeSort;
 
 import java.sql.Array;
 import java.util.Arrays;
@@ -21,8 +22,17 @@ public class TestClass {
 //        KthElement ra = new KthElement(arr);
 //        System.out.println(ra.getKthElement(4));
 
-        int[] temp = {1,2,3,4,5};
-        CycalicallyRotateArray sr = new CycalicallyRotateArray(temp);
-        Arrays.stream(sr.rotateInCycallically(2)).forEach(System.out::print);
+//        int[] temp = {1,2,3,4,5};
+//        CycalicallyRotateArray sr = new CycalicallyRotateArray(temp);
+//        Arrays.stream(sr.rotateInCycallically(2)).forEach(System.out::print);
+
+
+        MergeSort ms = new MergeSort(arr);
+
+        ms.sort();
+        Arrays.stream(ms.getArr()).forEach(value -> System.out.println(value));
+
+
+
     }
 }
