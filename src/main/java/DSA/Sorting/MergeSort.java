@@ -17,40 +17,37 @@ public class MergeSort implements Sorting{
         for(int i=0; i<this.arr.length;i++)
             aux[i] = this.arr[i];
 
-        mergeSort(0,arr.length,aux);
+        mergeSort(arr, aux, 0,arr.length);
     }
 
-    private void mergeSort(int low, int high, int[] aux){
-        if(low<high){
-           int mid = (low+high)/2;
-           mergeSort(low,mid, aux);
-           mergeSort(mid+1,high, aux);
-           merge(low, mid,high);
+    private void mergeSort(int[] a, int[] aux, int low, int high){
 
+        if(high<=low) return;
+
+        int mid = low+(high-low)/2;
+        mergeSort(a,aux, low,mid);
+        mergeSort(a,aux, mid+1,high);
+        merge(a, aux, low, mid, high);
+    }
+
+    private void merge(int[] a, int[] aux, int low, int mid, int high) {
+
+        for(int k=low; k<=high; k++){
+            aux[k] = a[k];
         }
-    }
 
-    private void merge(int low, int mid, int high){
+        int i = low, j= mid+1;
 
-        int[] aux = new int[high-low+1];
-
-        int i=low, j = mid+1;
-
-        for(int k=low; k<=high; k++)
-            aux[k] = arr[k];
-
-        for(int k=low; k<=high;k++){
+        for(int k = low; k<=high; k++){
             if(i>mid)
-                arr[k] = aux[j++];
+                a[k]= aux[j++];
             else if(j>high)
-                arr[k]= aux[j++];
+                a[k]=aux[i++];
             else if(aux[j]<aux[i])
-                arr[k] = aux[j++];
+                a[k]=aux[j++];
             else
-                arr[k]= aux[i++];
+                a[k]= aux[i++];
         }
-
-        System.out.println(low +" "+mid+" "+high);
     }
 
     @Override
